@@ -9,28 +9,6 @@
 
 using namespace std;
 
-// struct node {
-//     string name;
-//     bool visited;
-
-//    Node (string& n) 
-//     {
-//         address=n;
-//         visited=false;
-//     }
-
-//     bool operator<(Node& other) const 
-//     {
-//         return name <other.name;
-//     }
-
-//     void addNeighbor(string& neighbor) {
-//         neighbors.insert(neighbor);
-//     }
-
-
-// };
-
 struct Graph {
     map<string, list<string>> Map;
 
@@ -65,14 +43,12 @@ int main() {
 
     //Printing
        for (pair<const string, list<string>>& pair : graph.Map) {
-            cout << "City: " << pair.first << ", Available Flights: ";
+            cout << "City: " << pair.first << "  -> ";
             for (const string& neighbor : pair.second) {
                 cout << neighbor << " ";
             }
             cout << endl;
         }
-
-    //graph.print();
     infile.close();
     return 0;
 }
